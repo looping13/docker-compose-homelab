@@ -1,13 +1,13 @@
-Version "3.7"
+---
 services:
   web:
     container_name: nginx-jellyfin-web
     image: nginx
-#    hostname: nginx-jellyfin-web
-#    ports:
-#      - "80:80"
-#      - "443:443"
+    hostname: nginx-jellyfin-web
+    ports:
+      - 280:80
+      - 2443:443
     volumes:
-      - './www:/usr/share/nginx/html:ro'
-    network: host
+      - ./www:/usr/share/nginx/html:ro
+#    network_mode: host
     restart: unless-stopped
